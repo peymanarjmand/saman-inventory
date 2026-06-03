@@ -2,30 +2,31 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070b19" />
   <title>قیمت همکاری - سامان | سازنده لیست موجودی</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="app-shell">
-    <section class="control-panel">
+    <section class="control-panel" aria-label="تنظیمات ساخت لیست موجودی">
       <div class="brand-card">
-        <img id="brandLogoPreview" src="assets/logo.jpeg" alt="لوگو" />
+        <img id="brandLogoPreview" src="assets/logo.jpeg" alt="لوگو قیمت همکاری سامان" />
         <div>
           <p class="eyebrow">Inventory Poster Maker</p>
           <h1>سازنده لیست موجودی</h1>
-          <p>اسم بازی‌ها، تاریخ شمسی و لوگو را وارد کن؛ خروجی PNG آماده انتشار تحویل بگیر.</p>
+          <p>اسم بازی‌ها و تاریخ شمسی را وارد کن؛ خروجی PNG آماده انتشار تحویل بگیر.</p>
         </div>
       </div>
 
       <div class="form-grid">
         <label>
           عنوان کانال
-          <input id="channelTitle" value="قیمت همکاری - سامان" />
+          <input id="channelTitle" value="قیمت همکاری - سامان" autocomplete="off" />
         </label>
         <label>
           زیرعنوان
-          <input id="subtitle" value="لیست موجودی" />
+          <input id="subtitle" value="لیست موجودی" autocomplete="off" />
         </label>
       </div>
 
@@ -36,16 +37,12 @@
         <input id="day" inputmode="numeric" maxlength="2" value="۱۴" aria-label="روز" />
       </div>
 
-      <label class="full">
-        لیست بازی‌ها، هر خط یک بازی
-        <textarea id="gamesInput" spellcheck="false"></textarea>
+      <label class="full games-field">
+        <span>لیست بازی‌ها، هر خط یک بازی</span>
+        <textarea id="gamesInput" spellcheck="false" autocomplete="off"></textarea>
       </label>
 
-      <div class="tools-row">
-        <label class="upload-btn">
-          تغییر لوگو
-          <input id="logoUpload" type="file" accept="image/*" hidden />
-        </label>
+      <div class="tools-row secondary-actions">
         <button id="addSample" type="button">برگرداندن نمونه</button>
         <button id="clearList" type="button">خالی کردن لیست</button>
       </div>
@@ -56,7 +53,8 @@
       </div>
     </section>
 
-    <section class="preview-panel">
+    <section class="preview-panel" aria-label="پیش‌نمایش خروجی">
+      <div class="mobile-hint">پیش‌نمایش خروجی</div>
       <div class="preview-frame">
         <canvas id="posterCanvas" width="864" height="1536"></canvas>
       </div>
