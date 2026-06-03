@@ -274,17 +274,4 @@ $('renderBtn').addEventListener('click', renderPoster);
 $('downloadBtn').addEventListener('click', downloadPoster);
 $('addSample').addEventListener('click', () => { $('gamesInput').value = defaultGames.join('\n'); renderPoster(); });
 $('clearList').addEventListener('click', () => { $('gamesInput').value = ''; renderPoster(); });
-$('logoUpload').addEventListener('change', event => {
-  const file = event.target.files?.[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    logoImage = new Image();
-    logoImage.onload = renderPoster;
-    logoImage.src = reader.result;
-    $('brandLogoPreview').src = reader.result;
-  };
-  reader.readAsDataURL(file);
-});
-
 renderPoster();
