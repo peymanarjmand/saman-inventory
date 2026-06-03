@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>قیمت همکاری - سامان | سازنده لیست موجودی</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="control-panel">
+      <div class="brand-card">
+        <img id="brandLogoPreview" src="assets/logo.jpeg" alt="لوگو" />
+        <div>
+          <p class="eyebrow">Inventory Poster Maker</p>
+          <h1>سازنده لیست موجودی</h1>
+          <p>اسم بازی‌ها، تاریخ شمسی و لوگو را وارد کن؛ خروجی PNG آماده انتشار تحویل بگیر.</p>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <label>
+          عنوان کانال
+          <input id="channelTitle" value="قیمت همکاری - سامان" />
+        </label>
+        <label>
+          زیرعنوان
+          <input id="subtitle" value="لیست موجودی" />
+        </label>
+      </div>
+
+      <div class="date-box">
+        <span>تاریخ شمسی</span>
+        <input id="year" inputmode="numeric" maxlength="4" value="۱۴۰۵" aria-label="سال" />
+        <input id="month" inputmode="numeric" maxlength="2" value="۰۳" aria-label="ماه" />
+        <input id="day" inputmode="numeric" maxlength="2" value="۱۴" aria-label="روز" />
+      </div>
+
+      <label class="full">
+        لیست بازی‌ها، هر خط یک بازی
+        <textarea id="gamesInput" spellcheck="false"></textarea>
+      </label>
+
+      <div class="tools-row">
+        <label class="upload-btn">
+          تغییر لوگو
+          <input id="logoUpload" type="file" accept="image/*" hidden />
+        </label>
+        <button id="addSample" type="button">برگرداندن نمونه</button>
+        <button id="clearList" type="button">خالی کردن لیست</button>
+      </div>
+
+      <div class="tools-row sticky-actions">
+        <button id="renderBtn" type="button" class="primary">به‌روزرسانی پیش‌نمایش</button>
+        <button id="downloadBtn" type="button" class="success">دانلود عکس PNG</button>
+      </div>
+    </section>
+
+    <section class="preview-panel">
+      <div class="preview-frame">
+        <canvas id="posterCanvas" width="864" height="1536"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
